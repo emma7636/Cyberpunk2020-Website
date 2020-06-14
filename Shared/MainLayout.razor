@@ -1,0 +1,23 @@
+﻿@inherits LayoutComponentBase
+
+<div class="sidebar">
+    <NavMenu />
+</div>
+
+<div class="main">
+    <div class="top-row px-4">
+        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
+        @if (true)
+        {
+            <a data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle nav-link" href="#">
+                <span class="d-none d-lg-inline mr-2 text-gray-600 small">Iam User</span>
+                <img class="border rounded-circle img-profile" src="avatars/avatar1.jpeg" />
+                <span class="badge badge-danger badge-counter">0</span>
+            </a>
+        }
+    </div>
+
+    <div class="content px-4">
+        @Body
+    </div>
+</div>
