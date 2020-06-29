@@ -11,22 +11,31 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
     <link rel="stylesheet" href="css/bootstrap/styles.css">
 </head>
-@for (int i = 0; i < chars.Length; i++)
-{
+
 <div>
-    @{
-        int j = i;
-    }
-    <div @onclick="() => DisplayCharacter(j)">
-        <Cyberpunk2020CC.Components.CharacterMiniDisplay  character="@chars[j]"> </Cyberpunk2020CC.Components.CharacterMiniDisplay>
+    <div>
+        @for (int i = 0; i < chars.Length; i++)
+        {
+            <div>
+                @{
+                    int j = i;
+                }
+                <div @onclick="() => DisplayCharacter(j)">
+                    <Cyberpunk2020CC.Components.CharacterMiniDisplay character="@chars[j]"> </Cyberpunk2020CC.Components.CharacterMiniDisplay>
+                </div>
+            </div>
+        }
+    </div>
+    
+    <div>
+        @if (current != null)
+        {
+            <Cyberpunk2020CC.Components.CharacterDisplay character="@current"></Cyberpunk2020CC.Components.CharacterDisplay>
+        }
     </div>
 </div>
-}
 
-@if (current != null)
-{
-    <Cyberpunk2020CC.Components.CharacterDisplay character="@current"></Cyberpunk2020CC.Components.CharacterDisplay>
-}
+
 
 
 @code {
