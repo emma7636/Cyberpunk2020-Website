@@ -13,12 +13,14 @@
 </head>
 @for (int i = 0; i < chars.Length; i++)
 {
-    <div>
-        @{ 
-            int j = i;
-        }
-        <Cyberpunk2020CC.Components.CharacterMiniDisplay @ @onclick="() => DisplayCharacter(j)" character="@chars[j]"> </Cyberpunk2020CC.Components.CharacterMiniDisplay>
+<div>
+    @{
+        int j = i;
+    }
+    <div @onclick="() => DisplayCharacter(j)">
+        <Cyberpunk2020CC.Components.CharacterMiniDisplay  character="@chars[j]"> </Cyberpunk2020CC.Components.CharacterMiniDisplay>
     </div>
+</div>
 }
 
 @if (current != null)
