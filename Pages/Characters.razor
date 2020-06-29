@@ -1,24 +1,32 @@
 ﻿@page "/characters"
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Cyberpunk2020CharacterSheet</title>
-        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+TC">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Questrial">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
-        <link rel="stylesheet" href="css/bootstrap/styles.css">
-    </head>
-    
-    
-    
-@code {
-    private int currentCount = 0;
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Cyberpunk2020CharacterSheet</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+TC">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Questrial">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" href="css/bootstrap/styles.css">
+</head>
+@for (int i = 0; i < 4; i++)
+{
+    <div>
+        @{ 
+            int j = i;
+        }
+        <Cyberpunk2020CC.Components.CharacterMiniDisplay @ @onclick="() => DisplayCharacter(j)" character="@Cyberpunk2020Library.Character.GenerateRandomNPC()"> </Cyberpunk2020CC.Components.CharacterMiniDisplay>
+    </div>
+}
 
-    private void IncrementCount()
+
+@code {
+    Character[] chars = Server.GetCharactersFromDatabase();
+
+    private void DisplayCharacter(int i)
     {
-        currentCount++;
+
     }
 }
