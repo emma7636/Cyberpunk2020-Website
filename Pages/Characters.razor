@@ -11,22 +11,29 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
     <link rel="stylesheet" href="css/bootstrap/styles.css">
 </head>
-@for (int i = 0; i < 4; i++)
+@for (int i = 0; i < chars.Length; i++)
 {
     <div>
         @{ 
             int j = i;
         }
-        <Cyberpunk2020CC.Components.CharacterMiniDisplay @ @onclick="() => DisplayCharacter(j)" character="@Cyberpunk2020Library.Character.GenerateRandomNPC()"> </Cyberpunk2020CC.Components.CharacterMiniDisplay>
+        <Cyberpunk2020CC.Components.CharacterMiniDisplay @ @onclick="() => DisplayCharacter(j)" character="@chars[j]"> </Cyberpunk2020CC.Components.CharacterMiniDisplay>
     </div>
+}
+
+@if (current != null)
+{
+    <Cyberpunk2020CC.Components.CharacterDisplay character="@current"></Cyberpunk2020CC.Components.CharacterDisplay>
 }
 
 
 @code {
     Character[] chars = Server.GetCharactersFromDatabase();
 
+    Character current = null;
+
     private void DisplayCharacter(int i)
     {
-
+        current = chars[i];
     }
 }
