@@ -6,12 +6,13 @@ using Cyberpunk2020Library;
 
 namespace Cyberpunk2020CC
 {
-    internal static class Server
+    public static class Server
     {
-
-        static Character[] GetCharactersFromDatabase()
+        //Needs implementation
+        public static Character[] GetCharactersFromDatabase()
         {
-            return null;
+            Character[] res = { Character.GenerateRandomNPC() };
+            return res;
         }
     }
 }
