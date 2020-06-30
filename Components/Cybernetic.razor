@@ -1,0 +1,12 @@
+﻿
+<div class="text-center d-xl-flex align-items-xl-start" style="margin-top: 0;background-color: #d3cfcf;height: 26px;width: 100%;">
+    <div class="col-xl-1" style="padding-right: 0px;padding-left: 0px;"><label class="checkbox-button"><input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1" /><span class="checkbox-button__control"></span></label></div>
+    <div class="col-xl-9" style="padding-right: 0px;padding-left: 0px;"><span class="text-center d-xl-flex align-items-xl-start" style="margin-left: 8px;font-size: 16px;margin-top: 0px;">@cybernetic.name</span></div>
+    <div class="col-xl-1" style="padding-right: 0px;padding-left: 0px;"><span class="text-center d-xl-flex align-items-xl-start" style="margin-left: 8px;font-size: 16px;margin-top: 0px;">@cybernetic.hl</span></div>
+    <div class="col-xl-1" style="padding-right: 0px;padding-left: 0px;"><span class="text-center d-xl-flex align-items-xl-start" style="margin-left: 8px;font-size: 16px;margin-top: 0px;">@cybernetic.cost</span></div>
+</div>
+
+@code {
+    [Parameter]
+    public Cyberpunk2020Library.Cybernetic cybernetic { get; set; }
+}
