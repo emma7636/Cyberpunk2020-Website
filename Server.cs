@@ -11,7 +11,7 @@ namespace Cyberpunk2020CC
         //Needs implementation
         public static Character[] GetCharactersFromDatabase()
         {
-            Character[] res = { Character.GenerateRandomNPC() };
+            Character[] res = { Character.GenerateRandomNPC(), Character.GenerateRandomNPC(), Character.GenerateRandomNPC(), Character.GenerateRandomNPC() };
             return res;
         }
     }
